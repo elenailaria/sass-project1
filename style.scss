@@ -1,0 +1,83 @@
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+// variable scope => 1. global (root)/ 2. local
+// :root{
+//     --orange:orange;
+//     --blue:blue;
+//     --a: green;
+// }
+// h2{
+//     border-bottom: 2px solid var(--orange);
+// }
+
+// // 2. var(--name: fallback)
+// .box{
+//     background-color: var(--a, #ccc);
+//     padding: 10px;
+//     margin: 10px;
+// }
+// .special{
+//     --a:#f90;
+// }
+
+// SASS
+$bg-color: #0e7490;
+$myFontSize: 20px;
+$myWidth: 400px;
+$size: 1em;
+$color: #fb7185;
+
+body {
+  background-color: $bg-color;
+  font-size: $myFontSize;
+  color: $color;
+}
+#container {
+  margin: $size * 3;
+  width: $myWidth;
+}
+// SASS/SCSS
+// 3. SASS variable scope
+p {
+  $color: black;
+  color: $color;
+}
+span {
+  color: $color;
+}
+// 4. Nested Rules
+
+.myClass {
+  display: flex;
+  justify-content: space-between;
+  li {
+    list-style: none;
+    background-color: #22d3ee;
+  }
+  &:hover li {
+    background-color: black;
+  }
+}
+
+// 4.1
+
+.nested {
+  background-color: #10b981;
+  p {
+    color: white;
+  }
+}
+
+// 4.2
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+  }
+  a {
+    text-decoration: none;
+  }
+}
